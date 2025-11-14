@@ -20,10 +20,10 @@ public class AdvancedFlatMap {
 			        new Item("Keyboard", 1, 75.00)
 			    ))
 			);
-		Map<String, Double> totalRevenue = transactions.stream()
-				.flatMap(transaction ->transaction.items.stream())
-				.collect(Collectors.groupingBy(Item::getProductName,Collectors.summingDouble(item->item.getPrice()*item.getQuantity())));
-		
+			Map<String, Double> totalRevenue = transactions.stream()
+					.flatMap(transaction ->transaction.getItems().stream())
+					.collect(Collectors.groupingBy(Item::getProductName,Collectors.summingDouble(item->item.getPrice()*item.getQuantity())));
+			
 		System.out.println(totalRevenue);
 			    
 
