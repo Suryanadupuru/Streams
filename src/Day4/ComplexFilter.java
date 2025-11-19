@@ -14,5 +14,4 @@ public class ComplexFilter {
 		System.out.println(sum);
 
 	}
-
 }
